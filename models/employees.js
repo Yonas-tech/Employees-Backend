@@ -1,7 +1,6 @@
 const { Timestamp } = require('mongodb');
 const mongoose = require('mongoose');
 
-here is the schema I have
 // Define the Address schema
 const addressSchema = new mongoose.Schema({
     street: String,
@@ -14,7 +13,7 @@ const addressSchema = new mongoose.Schema({
 const employeeSchema = new mongoose.Schema({
     firstName: {type: String, required:true}, 
     lastName: {type: String, required:true},
-    position: {type: String, required:true},
+    position: {type: String, default: 'Employee'},
     department: {type: String, required:true},
     location: {
         type: String,

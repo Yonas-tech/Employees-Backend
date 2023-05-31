@@ -23,7 +23,6 @@ const getAllEmployees = async (req, res) => {
 // DELETE route to delete an employee by ID
 const deleteEmployee =  async (req, res) => {
     const { id } = req.params
-    
     try {
       const deletedEmployee = await Employee.findByIdAndDelete(id)
       
@@ -40,9 +39,7 @@ const deleteEmployee =  async (req, res) => {
 
 // UPDATE route to update an employee by ID
 const updateEmployee =  async (req, res) => {
-    const { id } = req.params
-    // const { firstName, lastName, position, department, location, phone, Email, isOnLeave } = req.body
-    
+    const { id } = req.params    
     try {
       const updatedEmployee = await Employee.findByIdAndUpdate(
         id,
@@ -63,8 +60,6 @@ const updateEmployee =  async (req, res) => {
 
 // CREATE route to create a new employee
 const createNewEmployee =  async (req, res) => {
-    //const { firstName, lastName, position, department, location, phone, Email, isOnLeave } = req.body
-    
     try {
       const newEmployee = new Employee(req.body)
       
@@ -81,9 +76,7 @@ const createNewEmployee =  async (req, res) => {
 
 // Show 
 const showEmployee =  async (req, res) => {
-    const { id } = req.params
-    // const { firstName, lastName, position, department, location, phone, Email, isOnLeave } = req.body
-    
+    const { id } = req.params    
     try {
       const foundEmployee = await Employee.findById(id)
     

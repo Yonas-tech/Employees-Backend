@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt')
 
 
 // INDEX: Get all users
-const getAllUsers = async () => {
+const getAllUsers = async (req, res) => {
   try {
     const foundUsers = await User.find().select('-password').lean()
     if (!foundUsers) {

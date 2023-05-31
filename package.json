@@ -24,5 +24,7 @@
     "nodeman": "^1.1.2",
     "pexels": "^1.4.0",
     "uuid": "^9.0.0"
-  }
+  },
+  "proxy": "http://localhost:3001/"
+
 }

@@ -23,16 +23,17 @@ app.use(logger)
 app.use(express.json())
 
 app.use(cookieParser())
+app.use(cors({ origin: '*' })) // used to whitelist requests
+// app.use(cors(corsOptions))
 
-app.use(cors(corsOptions))
 
 app.use('/', express.static(path.join(__dirname, '/public')))
 
 app.use('/', require('./routes/root'))
 
-app.use('/employees', require('./routes/api/employees'))
+app.use('/api/employees', require('./routes/api/employees'))
 
-app.use('/users', require('./routes/api/users'))
+app.use('/api/users', require('./routes/api/users'))
 
 // 404 response  
 app.all('*', (req, res) => {

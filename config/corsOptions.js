@@ -1,6 +1,7 @@
 const allowedOrigins = require('./allowedOrigins');
 
 const origins = [
+    'https://employeesdirect.onrender.com/',
     'http://localhost:3000',
     'http://localhost:3001/',
     'https://localhost:3001',

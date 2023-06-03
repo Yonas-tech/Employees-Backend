@@ -23,9 +23,9 @@ app.use(logger)
 app.use(express.json())
 
 app.use(cookieParser())
-app.use(cors({ origin: '*' })) // used to whitelist requests
-// app.use(cors(corsOptions))
 
+// app.use(cors({ origin: '*' })) // used to whitelist requests
+app.use(cors(corsOptions))
 
 app.use('/', express.static(path.join(__dirname, '/public')))
 
@@ -48,23 +48,10 @@ app.all('*', (req, res) => {
 })
 
 
-
-
-
-
-
 // // Check if token and create req.user
 // app.use(require('./config/checkToken'))
 
 // // Put API routes here, before the "catch all" route
-// app.use('/api/users', require('./routes/api/users'));
-
-
-// // The following "catch all" route (note the *) is necessary
-// // to return the index.html on all non-AJAX requests
-// app.get('/*', function(req, res) {
-//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
-// });
 
 
 app.use(errorHandler)
